@@ -58,10 +58,6 @@
 
 </div>
 
-<div id="footer">
-<g:render template="/common/footer"/>
-
-</div>
 
 </body>
 </html>

@@ -42,7 +42,7 @@ webrealms{
     }
     securityroles{
         role{
-            name='user'
+            name='biztech'
         }
     }
 

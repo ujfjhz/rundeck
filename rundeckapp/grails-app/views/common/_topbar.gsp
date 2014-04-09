@@ -35,20 +35,6 @@ function doCreateProject(){
 </script>
 <div  class="topbar solo" >
 
-    <a href="${grailsApplication.config.rundeck.gui.titleLink ? grailsApplication.config.rundeck.gui.titleLink : g.resource(dir: '/')}"
-       title="Home" class="home">
-        <g:set var="appTitle"
-               value="${grailsApplication.config.rundeck.gui.title ? grailsApplication.config.rundeck.gui.title : g.message(code: 'main.app.name')}"/>
-        <g:set var="appLogo"
-               value="${grailsApplication.config.rundeck.gui.logo ? grailsApplication.config.rundeck.gui.logo : g.message(code: 'main.app.logo')}"/>
-        <g:set var="appLogoW"
-               value="${grailsApplication.config.rundeck.gui.'logo-width' ? grailsApplication.config.rundeck.gui.'logo-width' : g.message(code: 'main.app.logo.width')}"/>
-        <g:set var="appLogoH"
-               value="${grailsApplication.config.rundeck.gui.'logo-height' ? grailsApplication.config.rundeck.gui.'logo-height' : g.message(code: 'main.app.logo.height')}"/>
-        <img src="${resource(dir: 'images', file: appLogo)}" alt="${appTitle}" width="${appLogoW}"
-             height="${appLogoH}"/>
-        ${appTitle}
-    </a>
 <g:if test="${session?.user && request.subject}">
 
 
@@ -105,7 +91,6 @@ function doCreateProject(){
 
 </g:if>
 
-    <g:set var="helpLinkUrl" value="${g.helpLinkUrl()}"/>
     <g:if test="${session?.user && request.subject}">
         <span class="headright">
             <g:set var="adminauth" value="${false}"/>
@@ -122,27 +107,14 @@ function doCreateProject(){
                         id="useraccount" title="User ${session.user.encodeAsHTML()} is currently logged in.">
                     ${session.user.encodeAsHTML()}
                 </a><!--
-        --><a href="${helpLinkUrl.encodeAsHTML()}" class="help sepL">
-                help
-            </a>
-        </span>
+        -->        </span>
     </g:if>
-    <g:else>
-        <span class="headright">
-            <a href="${helpLinkUrl.encodeAsHTML()}" class="help  sepL">
-                help
-            </a>
-        </span>
-    </g:else>
 </div>
 
 <g:if test="${session?.user && request.subject}">
 <span id="useraccount_popup" style="display:none;" class="useraccount">
     <ul>
         <li><g:link controller="user" action="profile">Profile</g:link></li>
-        <li><g:link action="logout" controller="user" title="Logout user: ${session.user}"
-                    params="${[refLink: controllerName && actionName ? createLink(controller: controllerName, action: actionName, params: params, absolute: true) : '']}">logout</g:link>
-        </li>
     </ul>
 </span>
 <script>

@@ -9,10 +9,6 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
 
-    <link rel="SHORTCUT ICON" href="${resource(dir:'images',file:'app-logo-small.png')}"/>
-    <link rel="favicon" href="${resource(dir:'images',file:'app-logo-small.png')}"/>
-    <link rel="icon" href="${resource(dir:'images',file:'app-logo-small.png')}" type="image/x-icon" />
-    <link rel="shortcut icon" href="${resource(dir:'images',file:'app-logo-small.png')}" type="image/x-icon" />
     <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}"/>
     <link rel="stylesheet" href="${resource(dir:'css',file:'menus.css')}"/>
 
@@ -74,9 +70,6 @@
     </form>
 </div>
 </div>
-</div>
-<div id="footer">
-    <g:render template="/common/footer"/>
 </div>
 </body>
 </html>
